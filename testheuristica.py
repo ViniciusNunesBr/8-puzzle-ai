@@ -12,10 +12,10 @@ initial_state = [
 
 
  
+        [3, 0, 1],
+    [8, 6, 4],
+    [5, 2,7]
 
-    [2, 0, 3],
-    [1, 4, 6],
-    [7, 5, 8]
 
 
 ]
@@ -46,6 +46,14 @@ initial_state = [
     [1, 5, 6],
     [7, 4, 8]
 
+    
+        [3, 0, 1],
+    [8, 6, 4],
+    [5, 2,7]
+
+
+
+
 
 """
 
@@ -55,8 +63,10 @@ board = Board(initial_state)
 result = greedy_best_first_search_with_loop(board)
 
 if result:
-    moves, num_moves = result
+    moves, num_moves, visited, finals = result
     print("Movimentos para resolver:", moves)
     print("Número de movimentos:", num_moves)
+    print("Nós visitados:", visited)
+    print("Nós finais:", len(finals))
 else:
     print("Não foi possível encontrar solução com Greedy BFS.")

@@ -315,7 +315,7 @@ class PuzzleGUI:
 
         if selected_method == 2: # HEURÍSTIC
             from heuristic_search import greedy_best_first_search_with_loop
-            moves, steps = greedy_best_first_search_with_loop(self.board)
+            moves, steps,visited, finals = greedy_best_first_search_with_loop(self.board)
             if moves is None:
                 messagebox.showwarning("Loop detectado", f"O algoritmo entrou em loop após {steps} movimentos.")
                 return
